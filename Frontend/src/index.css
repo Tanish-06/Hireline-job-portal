@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* Design tokens: Tailwind v4 turns these into classes like bg-brand, text-ink, font-display */
+@theme {
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-canvas: #f6f5f1;
+  --color-ink: #17212b;
+  --color-muted: #5d6975;
+  --color-line: #dedbd2;
+  --color-brand: #0c5c4c;
+  --color-brand-dark: #08443a;
+  --color-brand-soft: #e1efe9;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* shared form/button styles */
+.input {
+  @apply w-full rounded-md border border-line bg-white px-3 py-2 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20;
+}
+.btn {
+  @apply inline-flex items-center justify-center rounded-md bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand-dark disabled:opacity-60 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
+}
+.btn-outline {
+  @apply inline-flex items-center justify-center rounded-md border border-line bg-white px-4 py-2 text-sm font-semibold text-ink hover:border-brand hover:text-brand disabled:opacity-60;
+}
+.label {
+  @apply mb-1 block text-sm font-medium;
+}
